@@ -14,11 +14,8 @@ def food_facts(food):
 
     response = requests.request("GET", url, headers=headers, params=querystring)
 
-    # print(response.text)
-
     dict_response = ast.literal_eval(response.text)
 
-    # print(dict_response)
 
     food_facts = {
         "saturated fat": dict_response["items"][0]["fat_saturated_g"],
